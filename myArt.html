@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mondrian Painting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        .main{
+            background-color: #E7CCCC;
+            /* height: 100vh; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            /* display: block; */
+            /* text-align: center; */
+        }
+        .item{
+            display: flex; 
+            flex-direction: column; /* Stack the painting and the name vertically */
+            align-items: center;  /* Center the content horizontally */
+        }
+        .info{
+            font-size: 5rem;
+            background-color: #E7CCCC;
+            margin: 10px;
+            box-shadow: 9px 10px 16px 2px rgba(0,0,0,0.85);
+           -webkit-box-shadow: 9px 10px 16px 2px rgba(0,0,0,0.85);
+           -moz-box-shadow: 9px 10px 16px 2px rgba(0,0,0,0.85);
+           width: 100%;
+           font-family: "Pacifico", cursive;
+           text-align: center;
+        }
+        .name{
+            font-size: 3rem;
+            background-color: #E7CCCC;
+            box-shadow: 9px 10px 16px 2px rgba(0,0,0,0.85);
+           -webkit-box-shadow: 9px 10px 16px 2px rgba(0,0,0,0.85);
+           -moz-box-shadow: 9px 10px 16px 2px rgba(0,0,0,0.85);
+           width: 100%;
+           font-weight: bold;
+           margin-bottom: 10px;
+           font-family: 'Courier New', Courier, monospace;
+        }
+        footer{
+            font-size: 3rem;
+            text-align: right;
+            background-color: white;
+            /* box-shadow: 9px 10px 16px 2px rgba(0,0,0,0.85);
+           -webkit-box-shadow: 9px 10px 16px 2px rgba(0,0,0,0.85);
+           -moz-box-shadow: 9px 10px 16px 2px rgba(0,0,0,0.85); */
+           font-family: "Dancing Script", cursive;
+           font-weight: 700;
+        }
+        .grid-container{
+            height: 881px;
+            width: 636px;
+            display: grid;
+            /* grid-template-columns: 100px 200px 200px 100px;
+            grid-template-rows: 60px 400px 100px 150px 90px; */
+            grid-template-columns: 50px 50px 200px 100px 63px 50px 10px 50px 93px;
+            grid-template-rows: 80px 80px 161px 80px 70px 70px 70px 129px 40px 20px;
+            gap: 9px;
+            background-color: black;
+            box-shadow: 9px 10px 16px 2px rgba(0,0,0,0.85);
+           -webkit-box-shadow: 9px 10px 16px 2px rgba(0,0,0,0.85);
+           -moz-box-shadow: 9px 10px 16px 2px rgba(0,0,0,0.85); 
+        }
+        .box1{
+           background-color: red;
+           grid-column: span 2;
+        }
+        .box2{
+            background-color: grey;
+            /* grid-row: span 2; */
+            grid-area: 1 / 3 / 3 / 4;
+        }
+        .box3{
+            background-color: yellow;
+            /* grid-column: span 2; */
+            grid-area: 1 / 4 / 2 / 6;
+        }
+        .box4{
+            background-color: white;
+            /* grid-column: span 3;  */
+            grid-area: 1 / 6 / 2 / 9;
+        }
+        .box5{
+            background-color: white;
+            /* grid-row: span 3; */
+            grid-area: 2 / 1 / 5 / 3;
+        }
+        .box6{
+            background-color: white;
+            /* grid-column: span 2; */
+            grid-area: 3 / 3 / 4 / 5;
+        }
+        .box7{
+            background-color: white;
+            /* grid-column: span 5; */
+            grid-area: 2 / 4 / 3 / 9;
+        }
+        .box8{
+            background-color: yellow;
+            grid-area: 5 / 1 / 7 / 3;
+        }
+        .box9{
+            background-color: blue;
+            grid-area: 4 / 3 / 8 / 5;
+        }
+        .box10{
+            background-color: white;
+            grid-area: 3 / 5 / 8 / 7;
+        }
+        .box11{
+            background-color: grey;
+            grid-area: 3 / 7 / 6 / 9;
+        }
+        .box12{
+            background-color: grey;
+            grid-area: 6 / 7 / 8 / 9;
+        }
+        .box13{
+            background-color: white;
+            grid-area: 7 / 1 / 9 / 3;
+        }
+        .box14{
+            background-color: red;
+            grid-area: 8 / 3 / 11 / 4;
+        }
+        .box15{
+            background-color: white;
+            grid-area: 8 / 4 / 10 / 9;
+        }
+        .box16{
+            background-color: white;
+            grid-area: 9 / 1 / 11 / 2;
+        }
+        .box17{
+            background-color: grey;
+            grid-area: 9 / 2 / 11 / 3;
+        }
+        .box18{
+            background-color: white;
+            grid-area: 10 / 4 / 11 / 8;
+        }
+        .box19{
+            background-color: blue;
+            grid-area: 10 / 8 / 11 / 9;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="item">
+            <p class="info">Mondrain Painting</p>
+            <div class="grid-container">
+                <div class="box1"></div>
+                <div class="box2"></div>
+                <div class="box3"></div>
+                <div class="box4"></div>
+                <div class="box5"></div>
+                <div class="box6"></div>
+                <div class="box7"></div>
+                <div class="box8"></div>
+                <div class="box9"></div>
+                <div class="box10"></div>
+                <div class="box11"></div>
+                <div class="box12"></div>
+                <div class="box13"></div>
+                <div class="box14"></div>
+                <div class="box15"></div>
+                <div class="box16"></div>
+                <div class="box17"></div>
+                <div class="box18"></div>
+                <div class="box19"></div>
+            </div>
+            <p class="info name">Composition in Red, Blue, Yellow and Grey</p>
+        </div> 
+    </div>
+    <footer>Nandini Goyal 2024 © copyright . all rights reserved</footer> 
+</body>
+</html>
